@@ -10,3 +10,15 @@ patches:
     target:
       kind: Deployment
       name: web
+  - patch: |-
+      - op: replace
+        path: /data/index.html
+        value: |
+          <html>
+          <body>
+          <h1>PROD</h1>
+          </body>
+          </html>
+    target:
+      kind: ConfigMap
+      name: web-content

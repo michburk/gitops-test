@@ -20,3 +20,10 @@ spec:
             memory: 64Mi
           limits:
             memory: 128Mi
+        volumeMounts:
+        - name: content
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: content
+        configMap:
+          name: web-content

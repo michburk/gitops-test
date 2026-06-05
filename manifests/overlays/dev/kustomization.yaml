@@ -23,3 +23,15 @@ patches:
     target:
       kind: Service
       name: web
+  - patch: |-
+      - op: replace
+        path: /data/index.html
+        value: |
+          <html>
+          <body>
+          <h1>DEV</h1>
+          </body>
+          </html>
+    target:
+      kind: ConfigMap
+      name: web-content
