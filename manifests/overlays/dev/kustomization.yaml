@@ -13,3 +13,10 @@ patches:
     target:
       kind: Deployment
       name: web
+  - patch: |-
+      - op: replace
+        path: /spec/ports/0/port
+        value: 8080
+    target:
+      kind: Service
+      name: web
